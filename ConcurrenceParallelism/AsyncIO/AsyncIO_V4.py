@@ -19,3 +19,7 @@ async def do_something():
 print("Main - Starting")
 asyncio.run(do_something())
 print("Main - Ending")
+
+for i in range(len(tab)):
+    tasks.append(asyncio.create_task(do_work(tab[i])))
+    tasks[i].add_done_callback(printCallback)
